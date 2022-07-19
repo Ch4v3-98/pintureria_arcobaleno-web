@@ -2,67 +2,69 @@ import {
   Container,
   Nav,
   Navbar as BootstrapNavbar,
-  NavbarBrand,
   OffcanvasBody,
   OffcanvasHeader,
   OffcanvasTitle,
 } from 'react-bootstrap';
+import * as Icon from 'react-bootstrap-icons';
 import NavbarOffcanvas from 'react-bootstrap/esm/NavbarOffcanvas';
-import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
-import { NavLink } from 'react-router-dom';
 import { CategoriesDropdown } from './CategoriesDropdown';
-import { ShoppingCartButton } from './ShoppingCartButton';
+import { NavItem } from './NavItem';
+import { PageHeader } from './PageHeader';
 
 export function Navbar() {
   return (
     <BootstrapNavbar
       collapseOnSelect
       expand="lg"
-      bg="danger"
+      bg="secondary"
       variant="dark"
-      className="shadow-sm mb-3"
+      className="mb-3 p-0 d-flex flex-column pb-0"
+      sticky="top"
     >
-      <Container>
-        <Nav className="me-auto align-items-center">
-          <NavbarBrand href="/">
-            <img
-              src="/imgs/Arcobaleno-logos_black.png"
-              alt="Logo Arcobaleno"
-              style={{ height: '50px' }}
-            />
-          </NavbarBrand>
-          <NavbarToggle aria-controls={`offcanvasNavbar-expand-lg`} />
-          <NavbarOffcanvas
-            id={`offcanvasNavbar-expand-lg`}
-            aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
-            placement="start"
-          >
-            <OffcanvasHeader closeButton>
-              <OffcanvasTitle id={`offcanvasNavbarLabel-expand-lg`}>
-                Offcanvas
-              </OffcanvasTitle>
-            </OffcanvasHeader>
-            <OffcanvasBody>
-              <CategoriesDropdown />
-              <Nav.Link to="/pinturas" as={NavLink}>
-                Pinturas
-              </Nav.Link>
-              <Nav.Link to="/herramientas" as={NavLink}>
-                Herramientas
-              </Nav.Link>
-              <Nav.Link to="/accesorios" as={NavLink}>
-                Accesorios
-              </Nav.Link>
-              <Nav.Link to="/marcas" as={NavLink}>
-                Marcas
-              </Nav.Link>
-              <Nav.Link to="/contacto" as={NavLink}>
-                Contacto
-              </Nav.Link>
-            </OffcanvasBody>
-          </NavbarOffcanvas>
-        </Nav>
-        <ShoppingCartButton />
+      <PageHeader />
+      <Container className="p-0">
+        <NavbarOffcanvas
+          id={`offcanvasNavbar-expand-lg`}
+          aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
+          placement="start"
+        >
+          <OffcanvasHeader closeButton>
+            <OffcanvasTitle id={`offcanvasNavbarLabel-expand-lg`}>
+              Offcanvas
+            </OffcanvasTitle>
+          </OffcanvasHeader>
+          <OffcanvasBody>
+            <CategoriesDropdown className="mx-lg-3 bg-primary rounded-3" />
+            <Nav
+              justify
+              className="flex-fill justify-content-md-between align-items-start border border-0"
+              variant="tabs"
+            >
+              <NavItem
+                to="/pinturas"
+                title="PINTURAS"
+                icon={<Icon.Palette2 className="" />}
+              />
+              <NavItem
+                to="/herramientas"
+                title="HERRAMIENTAS"
+                icon={<Icon.Tools />}
+              />
+              <NavItem
+                to="/accesorios"
+                title="ACCESORIOS"
+                icon={<Icon.Boxes />}
+              />
+              <NavItem to="/marcas" title="MARCAS" icon={<Icon.Archive />} />
+              <NavItem
+                to="/contacto"
+                title="CONTACTO"
+                icon={<Icon.Envelope />}
+              />
+            </Nav>
+          </OffcanvasBody>
+        </NavbarOffcanvas>
       </Container>
     </BootstrapNavbar>
   );
