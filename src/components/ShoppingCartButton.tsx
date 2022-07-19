@@ -8,7 +8,7 @@ export function ShoppingCartButton() {
     <Button
       onClick={openCart}
       style={{ width: '3rem', height: '3rem', position: 'relative' }}
-      variant="outline-primary"
+      variant="outline-light"
       className="rounded-circle"
     >
       <svg
@@ -20,7 +20,7 @@ export function ShoppingCartButton() {
       </svg>
       {cartItemsQuantity > 0 && (
         <div
-          className="rounded-circle bg-danger d-flex justify-content-center align-items-center"
+          className="rounded-circle d-flex justify-content-center align-items-center"
           style={{
             color: 'white',
             width: '1.5rem',
