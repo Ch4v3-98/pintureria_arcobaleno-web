@@ -1,3 +1,27 @@
-* {
-    font-family: 'Roboto', sans-serif;
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+.custom-link {
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+}
+
+.custom-link:hover {
+    color: rgb(239, 247, 1);
+    text-decoration: none;
+}
+
+.social-media-button {
+    background-color: rgba(255, 255, 255, 45%);
+    border-radius: 50%;
+    color: rgb(240, 240, 240);
+    display: flex;
+    padding: 6px;
+    justify-content: center;
+    align-items: center;
 }
