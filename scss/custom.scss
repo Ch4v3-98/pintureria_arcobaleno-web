@@ -1,0 +1,16 @@
+/* make the customizations */
+$theme-colors: (
+    "primary": #FC740C,
+    "secondary": #F9984E,
+);
+
+// Create your own map
+$custom-colors: (
+  "terciary": #EFE608,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+/* import bootstrap to set changes */
+@import "../node_modules/bootstrap/scss/bootstrap";
