@@ -9,28 +9,39 @@ type ShoppingCartProps = {
 };
 
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
-  const { closeCart, cartItems } = useShoppingCart();
+  const { closeCart, cartItems, cartItemsQuantity } = useShoppingCart();
+
+  // const quantity
 
   return (
     <Offcanvas show={isOpen} onHide={closeCart} placement="end">
       <Offcanvas.Header>
-        <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
+        <Offcanvas.Title>Carrito de compras</Offcanvas.Title>
       </Offcanvas.Header>
+      <hr className="mt-0 mb-1" />
       <Offcanvas.Body>
-        <Stack>
-          {cartItems.map((item) => (
-            <CartItem key={item.id} {...item} />
-          ))}
-          <div className="ms-auto fw-bold fs-5">
-            Total{' '}
-            {formatCurrency(
-              cartItems.reduce((total, cartItem) => {
-                const item = storeItems.find((item) => item.id === cartItem.id);
-                return total + (item ? item.price * cartItem.quantity : 0);
-              }, 0),
-            )}
+        {cartItemsQuantity > 0 ? (
+          <Stack>
+            {cartItems.map((item) => (
+              <CartItem key={item.id} {...item} />
+            ))}
+            <div className="mt-3 ms-auto fw-bold fs-5">
+              Total{' '}
+              {formatCurrency(
+                cartItems.reduce((total, cartItem) => {
+                  const item = storeItems.find(
+                    (item) => item.id === cartItem.id,
+                  );
+                  return total + (item ? item.price * cartItem.quantity : 0);
+                }, 0),
+              )}
+            </div>
+          </Stack>
+        ) : (
+          <div className="text-center mt-4">
+            <h5>No hay productos en el carrito</h5>
           </div>
-        </Stack>
+        )}
       </Offcanvas.Body>
     </Offcanvas>
   );
