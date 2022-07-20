@@ -15,9 +15,6 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
 
   const quantity = getItemQuantity(id);
 
-  const productPrice = formatCurrency(price).split(',')[0];
-  const decimals = formatCurrency(price).split(',')[1];
-
   return (
     <Card className="h-100 hover-shadow">
       {quantity > 0 && (
@@ -50,10 +47,10 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
         </Card.Title>
         <Card.Text className="fs-5">
           <span className="  text-dark">
-            {productPrice}
-            <sup style={{ fontSize: '13px', marginLeft: '2px' }}>
+            {formatCurrency(price)}
+            {/* <sup style={{ fontSize: '13px', marginLeft: '2px' }}>
               {decimals}
-            </sup>
+            </sup> */}
           </span>
         </Card.Text>
         <div className="mt-auto">
