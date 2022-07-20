@@ -1,26 +1,28 @@
 [
   {
     "id": 1,
-    "name": "Book",
-    "price": 10.99,
-    "imgUrl": "/imgs/book.jpg"
+    "name": "Latex Interior Albalatex Design Blanco Mate 20 Lts",
+    "price": 1999,
+    "imgUrl": "/imgs/Pintura-Alba-Foto1.jpg"
   },
   {
     "id": 2,
-    "name": "Computer",
+    "name": "Impermeabilizante Duralba Frentes y Muros 10 Lts Blanco Alba",
     "price": 1199,
-    "imgUrl": "/imgs/computer.jpg"
+    "imgUrl": "/imgs/Pintura-Alba-Foto2.jpg"
+
   },
   {
     "id": 3,
-    "name": "Banana",
-    "price": 1.05,
-    "imgUrl": "/imgs/banana.jpg"
+    "name": "Impermeabilizante Duralba Techos 20 Lts Alba",
+    "price": 1499,
+    "imgUrl": "/imgs/Pintura-Alba-Foto3.jpg"
+
   },
   {
     "id": 4,
-    "name": "Car",
-    "price": 14000,
-    "imgUrl": "/imgs/car.jpg"
+    "name": "Latex Exterior Duralba Mate Blanco 4 Lts Alba",
+    "price": 4000,
+    "imgUrl": "/imgs/Pintura-Alba-Foto4.png"
   }
 ]
