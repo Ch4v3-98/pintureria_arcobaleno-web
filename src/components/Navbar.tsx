@@ -19,11 +19,11 @@ export function Navbar() {
       expand="lg"
       bg="secondary"
       variant="dark"
-      className="mb-3 p-0 d-flex flex-column pb-0"
+      className="mb-3 p-0 d-flex flex-column shadow-0"
       sticky="top"
     >
       <PageHeader />
-      <Container className="p-0">
+      <Container className="p-1">
         <NavbarOffcanvas
           id={`offcanvasNavbar-expand-lg`}
           aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
@@ -35,16 +35,16 @@ export function Navbar() {
             </OffcanvasTitle>
           </OffcanvasHeader>
           <OffcanvasBody>
-            <CategoriesDropdown className="mx-lg-3 bg-primary rounded-3" />
+            <CategoriesDropdown />
             <Nav
               justify
-              className="flex-fill justify-content-md-between align-items-start border border-0"
-              variant="tabs"
+              className="flex-fill justify-content-md-between align-items-center border border-0"
+              // variant="tabs"
             >
               <NavItem
                 to="/pinturas"
                 title="PINTURAS"
-                icon={<Icon.Palette2 className="" />}
+                icon={<Icon.Palette2 />}
               />
               <NavItem
                 to="/herramientas"
