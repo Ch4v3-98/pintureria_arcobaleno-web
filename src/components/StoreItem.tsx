@@ -1,4 +1,5 @@
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { CartPlusFill } from 'react-bootstrap-icons';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import { formatCurrency } from '../utilities/formatCurrency';
 
@@ -10,53 +11,59 @@ type StoreItemProps = {
 };
 
 export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
-  const {
-    getItemQuantity,
-    increaseItemQuantity,
-    decreaseItemQuantity,
-    removeItem,
-  } = useShoppingCart();
+  const { getItemQuantity, increaseItemQuantity } = useShoppingCart();
 
   const quantity = getItemQuantity(id);
 
+  const productPrice = formatCurrency(price).split(',')[0];
+  const decimals = formatCurrency(price).split(',')[1];
+
   return (
-    <Card className="h-100">
+    <Card className="h-100 hover-shadow">
+      {quantity > 0 && (
+        <OverlayTrigger overlay={<Tooltip>{quantity} en el carrito</Tooltip>}>
+          <div
+            style={{
+              position: 'absolute',
+              top: '-1rem',
+              right: '0.5rem',
+              zIndex: 1,
+              width: '50px',
+              height: '50px',
+            }}
+            className="d-flex justify-content-center align-items-center bg-info shadow-3-strong rounded-circle p-2"
+          >
+            <CartPlusFill size={20} color="white" className="" />
+          </div>
+        </OverlayTrigger>
+      )}
       <Card.Img
         variant="top"
         src={imgUrl}
         height="200px"
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit: 'contain' }}
+        className="p-2"
       />
       <Card.Body className="d-flex flex-column">
-        <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
-          <span className="fs-2">{name}</span>
-          <span className="ms-2 text-muted">{formatCurrency(price)}</span>
+        <Card.Title className="d-flex justify-content-between align-items-baseline mb-2">
+          <span className="text-muted fs-6">{name}</span>
         </Card.Title>
+        <Card.Text className="fs-5">
+          <span className="  text-dark">
+            {productPrice}
+            <sup style={{ fontSize: '13px', marginLeft: '2px' }}>
+              {decimals}
+            </sup>
+          </span>
+        </Card.Text>
         <div className="mt-auto">
-          {quantity === 0 ? (
-            <Button className="w-100" onClick={() => increaseItemQuantity(id)}>
-              + Add To Cart
-            </Button>
-          ) : (
-            <div
-              className="d-flex align-items-center flex-column"
-              style={{ gap: '.5rem' }}
-            >
-              <div
-                className="d-flex align-items-center justify-content-center"
-                style={{ gap: '.5rem' }}
-              >
-                <Button onClick={() => decreaseItemQuantity(id)}>-</Button>
-                <div>
-                  <span className="fs-3">{quantity}</span> in cart
-                </div>
-                <Button onClick={() => increaseItemQuantity(id)}>+</Button>
-              </div>
-              <Button onClick={() => removeItem(id)} variant="danger" size="sm">
-                Remove
-              </Button>
-            </div>
-          )}
+          <Button
+            className="w-100 d-flex flex-fill justify-content-center align-items-center"
+            onClick={() => increaseItemQuantity(id)}
+          >
+            <CartPlusFill color="white" />
+            <span className="ms-2 text-light fw-bold">Agregar</span>
+          </Button>
         </div>
       </Card.Body>
     </Card>
