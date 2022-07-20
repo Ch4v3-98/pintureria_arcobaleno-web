@@ -17,9 +17,6 @@
     "react-scripts": "5.0.1",
     "sass-loader": "^13.0.2"
   },
-  "overrides": {
-    "autoprefixer": "10.4.5"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -46,6 +43,7 @@
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
+    "@types/node": "^18.0.6",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "@types/react-router-dom": "^5.3.3",
