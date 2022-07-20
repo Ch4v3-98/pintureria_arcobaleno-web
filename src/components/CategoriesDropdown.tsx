@@ -1,17 +1,29 @@
 import { NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-export function CategoriesDropdown() {
+export function CategoriesDropdown({ ...props }) {
   return (
     <NavDropdown
-      id="nav-dropdown-dark-example"
-      title="CATEGORÍAS"
-      menuVariant="dark"
+      id="categories-dropdown"
+      menuVariant="light"
+      className="ms-5 my-1 border border-terciary bg-primary rounded"
+      title={
+        <span
+          className="text-uppercase text-light me-4"
+          style={{ fontSize: '0.85rem' }}
+        >
+          Categorías
+        </span>
+      }
+      {...props}
     >
-      <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-      <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-      <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-      <NavDropdown.Divider />
-      <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+      <NavDropdown.Item as={Link} to="/pinturas">
+        Pinturas
+      </NavDropdown.Item>
+      <NavDropdown.Item as={Link} to="/accesorios">
+        Accesorios
+      </NavDropdown.Item>
+      {/* <NavDropdown.Divider /> */}
     </NavDropdown>
   );
 }

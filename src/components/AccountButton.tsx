@@ -17,12 +17,12 @@ export function AccountButton() {
     <>
       <Button
         variant="outline-light"
-        className="rounded-circle"
+        className="rounded-circle text-light"
         style={{ width: '3rem', height: '3rem' }}
         ref={target}
         onClick={() => setShow(!show)}
       >
-        <Icon.PersonFill size={23} />
+        <Icon.Person size={23} />
       </Button>
       <Overlay
         rootClose

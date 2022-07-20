@@ -17,7 +17,11 @@ export function CartItem({ id, quantity }: CartItemProps) {
   }
 
   return (
-    <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
+    <Stack
+      direction="horizontal"
+      gap={2}
+      className="d-flex align-items-center rounded bg-light p-3"
+    >
       <img
         src={item.imgUrl}
         alt={item.name}

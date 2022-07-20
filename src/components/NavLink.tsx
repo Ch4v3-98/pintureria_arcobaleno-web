@@ -11,12 +11,12 @@ export function NavLink({ to, title }: NavLinkProps) {
   return (
     <NavItem
       as={Link}
-      className="custom-link link-light text-decoration-none align-items-center align-content-center d-flex"
+      className="custom-link link-light text-decoration-none d-flex align-items-center align-content-center"
       to={to}
     >
-      <Icon.ArrowRightCircle size={16} />
+      <Icon.CaretRight size={14} />
       &nbsp;
-      {title}
+      <span style={{ fontSize: '0.9rem' }}>{title}</span>
     </NavItem>
   );
 }

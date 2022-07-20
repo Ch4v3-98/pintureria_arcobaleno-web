@@ -17,7 +17,9 @@ export function NavItem({ to, title, icon }: NavItemProps) {
     >
       {icon}
       &nbsp;&nbsp;
-      <span className="">{title}</span>
+      <span className="" style={{ fontSize: '0.85rem' }}>
+        {title}
+      </span>
     </Nav.Link>
   );
 }
