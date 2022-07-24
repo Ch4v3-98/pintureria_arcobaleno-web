@@ -1,12 +1,5 @@
-import {
-  DeepRequired,
-  FieldErrorsImpl,
-  FieldValues,
-  Path,
-  useForm,
-  UseFormRegister,
-} from 'react-hook-form';
-import { Form, FloatingLabel } from 'react-bootstrap';
+import { FieldErrorsImpl, Path, UseFormRegister } from 'react-hook-form';
+import { Form } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 
 interface FieldTextProps {
