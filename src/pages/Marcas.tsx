@@ -9,7 +9,7 @@ export function Marcas() {
       <Heading className="mt-5 h5">Marcas</Heading>
       <Row className="g-3">
         {marcas.map((marca) => (
-          <Col md={6} lg={4} xl={3}>
+          <Col key={marca.id} md={6} lg={4} xl={3}>
             <Link to="/pinturas">
               <Card key={marca.id} className="p-5 h-100 hover-shadow bg-light">
                 <Card.Img
