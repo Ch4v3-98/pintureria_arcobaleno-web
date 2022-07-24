@@ -17,8 +17,8 @@ export function AccountButton() {
     <>
       <Button
         variant="outline-light"
-        className="rounded-circle text-light"
-        style={{ width: '3rem', height: '3rem' }}
+        className="rounded-circle text-light p-3"
+        // style={{ width: '3rem', height: '3rem' }}
         ref={target}
         onClick={() => setShow(!show)}
       >

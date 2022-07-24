@@ -19,7 +19,7 @@ export function Navbar() {
       expand="lg"
       bg="secondary"
       variant="dark"
-      className="mb-3 p-0 d-flex flex-column shadow-0"
+      className="p-0 d-flex flex-column"
       sticky="top"
     >
       <PageHeader />
@@ -41,15 +41,11 @@ export function Navbar() {
               className="flex-fill justify-content-md-between align-items-center border border-0"
               // variant="tabs"
             >
+              <NavItem to="/" title="INICIO" icon={<Icon.HouseFill />} />
               <NavItem
                 to="/pinturas"
                 title="PINTURAS"
                 icon={<Icon.Palette2 />}
-              />
-              <NavItem
-                to="/herramientas"
-                title="HERRAMIENTAS"
-                icon={<Icon.Tools />}
               />
               <NavItem
                 to="/accesorios"

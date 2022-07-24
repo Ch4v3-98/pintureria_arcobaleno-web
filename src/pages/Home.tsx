@@ -5,8 +5,8 @@ import storeItems from '../data/items.json';
 
 export function Home() {
   return (
-    <Container>
-      <Row className="w-100">
+    <Container className="">
+      <Row>
         <Col>
           <HomeCarousel />
         </Col>

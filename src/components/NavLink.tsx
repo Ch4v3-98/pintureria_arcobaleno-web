@@ -2,10 +2,10 @@ import { NavItem } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
 
-type NavLinkProps = {
+interface NavLinkProps {
   to: string;
   title: string;
-};
+}
 
 export function NavLink({ to, title }: NavLinkProps) {
   return (

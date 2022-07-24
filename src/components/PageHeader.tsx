@@ -1,4 +1,12 @@
-import { Button, Container, Form, NavbarBrand, Stack } from 'react-bootstrap';
+import {
+  Button,
+  Container,
+  Form,
+  Image,
+  InputGroup,
+  NavbarBrand,
+  Stack,
+} from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
 import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
 import { NavLink } from 'react-router-dom';
@@ -14,25 +22,28 @@ export function PageHeader() {
           aria-controls={`offcanvasNavbar-expand-lg`}
           className="bg-dark"
         />
-        <NavbarBrand as={NavLink} to="/">
-          <img
+        <NavbarBrand as={NavLink} to="/" className="d-none d-sm-block">
+          <Image
             id="logo"
-            src="/imgs/Arcobaleno-logos_black.png"
+            src="/imgs/Arcobaleno-logos_white.png"
             alt="Logo Arcobaleno"
             style={{ height: '50px' }}
           />
         </NavbarBrand>
-        <Form className="d-none d-lg-flex col-md-6 rounded-4 border border-1 border-light">
+        <InputGroup className="d-none d-lg-flex w-50">
           <Form.Control
             type="search"
             placeholder="Buscar"
             className="rounded-0 rounded-start"
             aria-label="Search"
           />
-          <Button variant="" className="bg-secondary rounded-0 rounded-end">
-            <Icon.Search className="text-light" size={22} />
+          <Button
+            variant=""
+            className="bg-secondary rounded-0 rounded-end py-2"
+          >
+            <Icon.Search className="text-light" />
           </Button>
-        </Form>
+        </InputGroup>
         <Stack direction="horizontal" gap={2}>
           <SearchButton />
           <AccountButton />

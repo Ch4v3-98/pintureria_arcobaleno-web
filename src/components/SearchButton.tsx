@@ -6,6 +6,7 @@ import {
   PopoverBody,
   Form,
   FormControl,
+  InputGroup,
 } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
 
@@ -22,7 +23,7 @@ export function SearchButton() {
         ref={target}
         onClick={() => setShow(!show)}
       >
-        <Icon.Search size={20} />
+        <Icon.Search size={20} color="white" />
       </Button>
       <Overlay
         target={target.current}
@@ -43,7 +44,7 @@ export function SearchButton() {
             }}
           >
             <PopoverBody className="p-3">
-              <Form className="d-flex">
+              <InputGroup>
                 <FormControl
                   type="search"
                   placeholder="Buscar"
@@ -51,12 +52,12 @@ export function SearchButton() {
                   aria-label="Search"
                 />
                 <Button
-                  variant=""
-                  className="bg-secondary rounded-0 rounded-end"
+                  className="bg-secondary rounded-0 rounded-end p-2"
+                  style={{ width: '100px' }}
                 >
-                  <Icon.Search className="text-light" size={22} />
+                  <Icon.Search className="text-light" />
                 </Button>
-              </Form>
+              </InputGroup>
             </PopoverBody>
           </Popover>
         )}

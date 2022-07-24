@@ -8,9 +8,10 @@ export function ShoppingCartButton() {
   return (
     <Button
       onClick={openCart}
-      style={{ width: '3rem', height: '3rem', position: 'relative' }}
+      style={{ position: 'relative' }}
       variant="outline-light"
-      className="rounded-circle text-light"
+      className="rounded-circle text-light p-3"
+      aria-label="Carrito de compras"
     >
       {cartItemsQuantity > 0 ? (
         <>
