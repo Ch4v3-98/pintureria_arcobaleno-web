@@ -4,14 +4,11 @@ import { v1 as uuid } from 'uuid';
 const data = [
   {
     name: 'Latex Interior Albalatex Design Blanco Mate 20 Lts',
-    price: 4999,
-    discount: 0,
+    price: 30534,
+    discount: 10,
     description:
       '¡Las manchas en las paredes ya no son un problema! Látex para Interiores mate de alto desempeño y durabilidad. Gracias a su innovadora tecnología ultra resist, es 3 veces más resistente al lavado, antimanchas, repele líquidos y no deja aureola. Fácil de limpiar. Se aplica con pincel, rodillo o soplete.',
-    images: [
-      '/imgs/productos/pinturas/Pintura-Alba-Foto1.jpg',
-      '/imgs/productos/pinturas/Pintura-Alba-Foto2.jpg',
-    ],
+    images: ['/imgs/productos/pinturas/Pintura-Alba-Foto1.jpg'],
     brand: 'Alba',
     color: 'Mate blanco',
     capacity: 20,
@@ -20,21 +17,23 @@ const data = [
   },
   {
     name: 'Impermeabilizante Duralba Frentes y Muros 10 Lts Blanco Alba',
-    price: 2499,
+    price: 15454,
     discount: 10,
-    description: 'Pintura 1',
+    description:
+      'Impermeabilizante Elástomérico para Exteriores Mate. Con polímeros de gran elasticidad y óptima protección impermeabilizante. Película con alta resistencia al lavado y menor adherencia de la suciedad. Gran poder cubritivo e integridad de película. Todos los colores.',
     images: ['/imgs/productos/pinturas/Pintura-Alba-Foto2.jpg'],
     brand: 'Duralba',
     color: 'Blanco',
-    capacity: 20,
+    capacity: 10,
     type: 'exterior',
     amount: 15,
   },
   {
     name: 'Impermeabilizante Duralba Techos 20 Lts Alba',
-    price: 2499,
+    price: 28634,
     discount: 10,
-    description: 'Pintura 1',
+    description:
+      'Membrana impermeabilizante para techos. Al secar forma una menbrana protectora impermeable, de gran adherencia, manteniendo una excelente elasticidad con el paso del tiempo y evitando la filtración de agua. Especialmente formulado para reducir la temperatura de las superficies donde se aplica, disminuyendo la transferencia de calor desde el exterior y mejorando la aislación térmica.',
     images: ['/imgs/productos/pinturas/Pintura-Alba-Foto3.jpg'],
     brand: 'Duralba',
     color: 'Blanco',
@@ -44,9 +43,10 @@ const data = [
   },
   {
     name: 'Latex Exterior Duralba Mate Blanco 4 Lts Alba',
-    price: 3999,
+    price: 6034,
     discount: 10,
-    description: 'Pintura 1',
+    description:
+      'Pintura de Base Acuosa para decoración y protección de muros en exteriores, con gran resistencia a la intemperie',
     images: ['/imgs/productos/pinturas/Pintura-Alba-Foto4.png'],
     brand: 'Duralba',
     color: 'Blanco',
@@ -57,7 +57,7 @@ const data = [
   {
     name: 'Latex Interior Lavable Mate Blanco 20 Lts Tersuave',
     price: 28109,
-    discount: 0,
+    discount: 5,
     description:
       'Lavable Revestimiento Estirenado para Interiores está formulado con polímeros de última generación y pigmentos de alta calidad que le confieren una alta resistencia al frote por lavabilidad - sin aureolas -, poder cubritivo sin igual, bajo nivel de salpicado y facilidad de aplicación. La lavabilidad es una condición que este producto rescata, garantizando la sencilla remoción de manchas rebeldes y de difícil eliminación, a través de la cuidada selección de sus componentes, siendo especialmente indicado para el pintado de cuartos de niños, cocinas, pasillos y áreas de alto tránsito. USOS: Se aplica en interiores, sobre superficies de mampostería, ladrillos, revoque, hormigón visto, yeso, etc. sobre los que se haya aplicado el fondo adecuado. Su lavabilidad lo hace especialmente recomendado para cuartos de niños, pasillos, cocinas y áreas de alto tránsito.',
     images: ['/imgs/productos/pinturas/Pintura-Tersuave-20l.jpg'],
@@ -83,7 +83,7 @@ const data = [
   {
     name: 'Latex Interior Tersen Mate Blanco 20 Lts Tersuave',
     price: 26783,
-    discount: 0,
+    discount: 5,
     description:
       'Tersen Latex Interior Blanco ha sido desarrollado con la mas moderna tecnologia, polimeros y pigmentos de ultima generacion. El resultado es un recubrimiento de alto poder cubritivo, maxima resistencia y la mayor performance de rendimiento.',
     images: ['/imgs/productos/pinturas/Pintura-Terasuave-Mate.jpg'],
@@ -92,18 +92,6 @@ const data = [
     capacity: 20,
     type: 'interior',
     amount: 34,
-  },
-  {
-    name: 'Pintura Duralba Frentes y Muros 10 Lts Blanco Alba',
-    price: 2499,
-    discount: 0,
-    description: 'Pintura 1',
-    images: ['/imgs/productos/pinturas/Pintura-Alba-Foto2.jpg'],
-    brand: 'Duralba',
-    color: 'Blanco',
-    capacity: 10,
-    type: 'exterior',
-    amount: 40,
   },
   {
     name: 'Recuplast Frentes 20 Litros Impermeabilizante Sinteplast Blanco',
