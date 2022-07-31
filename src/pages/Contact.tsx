@@ -5,7 +5,6 @@ import {
   Envelope,
   House,
   Telephone,
-  TelephoneFill,
   Whatsapp,
 } from 'react-bootstrap-icons';
 import { SubmitHandler, useForm } from 'react-hook-form';

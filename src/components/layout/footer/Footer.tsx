@@ -3,7 +3,6 @@ import {
   Clock,
   Envelope,
   Facebook,
-  House,
   HouseFill,
   Instagram,
   Telephone,
