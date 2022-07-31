@@ -23,6 +23,11 @@ function Sidebar() {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
+          <Nav.Link as={NavLink} to="/sobre-nosotros">
+            Sobre nosotros
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
           <Nav.Link as={NavLink} to="/faq">
             Preguntas Frecuentes
           </Nav.Link>
@@ -30,6 +35,11 @@ function Sidebar() {
         <Nav.Item>
           <Nav.Link as={NavLink} to="/terminos-y-condiciones">
             Términos y Condiciones
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link as={NavLink} to="/devoluciones">
+            Política de Devoluciones
           </Nav.Link>
         </Nav.Item>
       </Nav>
