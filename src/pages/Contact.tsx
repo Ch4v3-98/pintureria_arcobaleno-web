@@ -3,6 +3,7 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import {
   Clock,
   Envelope,
+  House,
   Telephone,
   TelephoneFill,
   Whatsapp,
@@ -37,6 +38,12 @@ export function Contact() {
           <section>
             <h5 className="mb-3 text-primary">Ventas / Atención al Cliente</h5>
             <Row>
+              <div>
+                <House size={18} className="me-2" />
+                <span style={{ fontSize: '0.95rem' }}>
+                  San Martín 230 - Gálvez, Santa Fe, Argentina
+                </span>
+              </div>
               <Col>
                 <div>
                   <Telephone size={18} color="dark" />

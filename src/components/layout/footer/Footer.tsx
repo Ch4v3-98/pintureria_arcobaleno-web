@@ -3,6 +3,8 @@ import {
   Clock,
   Envelope,
   Facebook,
+  House,
+  HouseFill,
   Instagram,
   Telephone,
   Whatsapp,
@@ -72,7 +74,7 @@ export function Footer() {
                       arcobalenopintureria@cegnet.com.ar
                     </span>
                   </div>
-                  <div className="">
+                  <div>
                     <Clock size={18} color="white" />
                     <span
                       className="ms-2 text-light"
@@ -96,25 +98,39 @@ export function Footer() {
             </Row>
           </Col>
           <Col lg={4} className="my-3 my-lg-0">
-            <Heading className="h6 fw-bold text-light text-uppercase">
-              Seguínos en nuestras redes
-            </Heading>
-            <Stack
-              direction="horizontal"
-              gap={2}
-              className="d-flex justify-content-start"
-            >
-              <SocialMediaButton
-                title="Facebook"
-                href="https://www.facebook.com/pintureriaarcobaleno/"
-                icon={<Facebook size={25} />}
-              />
-              <SocialMediaButton
-                title="Instagram"
-                href="https://www.instagram.com/arcobalenopintureria/"
-                icon={<Instagram size={25} />}
-              />
-            </Stack>
+            <section>
+              <Heading className="h6 fw-bold text-light text-uppercase">
+                Encontranos en
+              </Heading>
+              <div className="d-flex align-items-center">
+                <HouseFill size={20} color="white" />
+                &nbsp;
+                <span className="text-light">
+                  San Martín 230 - Gálvez, Santa Fe, Argentina
+                </span>
+              </div>
+            </section>
+            <section className="mt-5">
+              <Heading className="h6 fw-bold text-light text-uppercase ">
+                Seguínos en nuestras redes
+              </Heading>
+              <Stack
+                direction="horizontal"
+                gap={2}
+                className="d-flex justify-content-start"
+              >
+                <SocialMediaButton
+                  title="Facebook"
+                  href="https://www.facebook.com/pintureriaarcobaleno/"
+                  icon={<Facebook size={25} />}
+                />
+                <SocialMediaButton
+                  title="Instagram"
+                  href="https://www.instagram.com/arcobalenopintureria/"
+                  icon={<Instagram size={25} />}
+                />
+              </Stack>
+            </section>
           </Col>
           <hr className="my-1" />
           <span className="text-white mt-3 fw-bold">
