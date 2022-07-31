@@ -1,22 +1,22 @@
-export interface Producto {
-  id: number;
-  nombre: string;
-  precio: number;
-  descuento: number; // %
-  descripcion: string;
-  categoria: string;
-  imagenes: string[];
-  marca: string;
-  cantidad: number;
+export interface Product {
+  id: string;
+  name: string;
+  price: number;
+  discount: number; // %
+  description: string;
+  category: string;
+  images: string[];
+  brand: string;
+  amount: number;
 }
 
-export interface Pintura extends Producto {
+export interface Paint extends Product {
   color: string;
-  capacidad: number; // Litros, ml, etc
-  tipo?: TipoPintura;
+  capacity: number;
+  type?: PaintType;
 }
 
-export const enum TipoPintura {
+export const enum PaintType {
   Interior = 'interior',
   Exterior = 'exterior',
   Techos = 'techo',
@@ -27,11 +27,11 @@ export const enum TipoPintura {
   Ladrillos = 'ladrillos',
 }
 
-export interface Accesorio extends Producto {
-  tipo: TipoAccesorio;
+export interface Accessory extends Product {
+  type: AccessoryType;
 }
 
-export const enum TipoAccesorio {
+export const enum AccessoryType {
   Pincel = 'pincel',
   Rodillo = 'rodillo',
   Escaleras = 'escaleras',
@@ -43,12 +43,12 @@ export const enum TipoAccesorio {
   Cepillos = 'cepillos',
 }
 
-export interface Marca {
-  id: number;
-  nombre: string;
-  imagen: string;
-  productos: Producto[];
-  tiposProductos: TipoProducto[];
+export interface Brand {
+  id: string;
+  name: string;
+  image: string;
+  products: Product[];
+  productTypes: ProductType[];
 }
 
-export type TipoProducto = 'pintura' | 'accesorio';
+export type ProductType = 'pintura' | 'accesorio';
