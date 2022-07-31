@@ -1,72 +1,10 @@
-import { useState } from 'react';
-import { InputGroup } from 'react-bootstrap';
-import {
-  Container,
-  Row,
-  Col,
-  Stack,
-  Button,
-  Table,
-  Image,
-  Form,
-} from 'react-bootstrap';
+import { Container, Row, Col, Stack, Button, Table } from 'react-bootstrap';
 import { Trash } from 'react-bootstrap-icons';
-import { CartItem } from '../components/CartItem';
 import { Heading } from '../components/Heading';
-import Price from '../components/Price';
 import { useShoppingCart } from '../context/ShoppingCartContext';
-import products from '../data/products';
-import { Product } from '../data/types';
-import { formatCurrency } from '../utilities/formatCurrency';
 
 function Cart() {
-  const {
-    cartItems,
-    cartItemsQuantity,
-    getItemQuantity,
-    removeItem,
-    clearCart,
-  } = useShoppingCart();
-
-  // const cartItem = (item: Product) => {
-  //   return (
-  //     <tr>
-  //       <td>
-  //         <div className="d-flex">
-  //           <Image src={item.images[0]} alt={item.name} height={100} />
-  //           <div className="ms-3">
-  //             <p className="text-muted">{item.name}</p>
-  //           </div>
-  //         </div>
-  //       </td>
-  //       <td className="text-center">
-  //         <Price price={item.price} />
-  //       </td>
-  //       <td>
-  //         <Form.Control
-  //           style={{ width: '60px' }}
-  //           min={1}
-  //           max={item.amount}
-  //           type="number"
-  //           value={quantity}
-  //           onChange={(e) => setQuantity(Number(e.target.value))}
-  //         />
-  //       </td>
-  //       <td>
-  //         <p className="text-muted">
-  //           <Price price={item.price * quantity} />
-  //           <Button
-  //             variant="outline-primary"
-  //             className="ms-2"
-  //             onClick={() => removeItem(item.id)}
-  //           >
-  //             <Trash size={20} />
-  //           </Button>
-  //         </p>
-  //       </td>
-  //     </tr>
-  //   );
-  // };
+  const { cartItemsQuantity, clearCart } = useShoppingCart();
 
   return (
     <Container className="my-5">

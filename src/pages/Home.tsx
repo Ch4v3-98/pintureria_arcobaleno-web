@@ -5,7 +5,7 @@ import paintItems from '../data/paints';
 
 export function Home() {
   return (
-    <Container>
+    <Container fluid="lg">
       <HomeCarousel />
       <section className="mb-4">
         <div className="mb-3 p-4 text-center rounded-3 bg-secondary border border-2">

@@ -12,6 +12,7 @@ type ShoppingCartProps = {
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
   const { closeCart, clearCart, cartItems, cartItemsQuantity } =
     useShoppingCart();
+
   const navigate = useNavigate();
 
   const handlePurchase = () => {
@@ -21,7 +22,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
   };
 
   return (
-    <Offcanvas show={isOpen} onHide={closeCart} placement="end">
+    <Offcanvas scroll show={isOpen} onHide={closeCart} placement="end">
       <Offcanvas.Header closeButton className="bg-primary">
         <Offcanvas.Title className="text-light">
           Carrito de compras

@@ -14,7 +14,6 @@
     }
   }
 
-/* MediaQuery .navItem */
 @media (max-width: 992px) {
   .nav-item {
     color: darkorange !important;

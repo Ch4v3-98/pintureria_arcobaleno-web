@@ -11,7 +11,8 @@ export function NavLink({ to, title }: NavLinkProps) {
   return (
     <NavItem
       as={Link}
-      className="custom-link link-light text-decoration-none d-flex align-items-center align-content-center"
+      className="link-light text-decoration-none d-flex align-items-center align-content-center"
+      bsPrefix="custom-link"
       to={to}
     >
       <Icon.CaretRight size={14} />

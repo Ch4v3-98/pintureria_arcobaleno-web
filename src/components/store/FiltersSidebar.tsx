@@ -1,6 +1,5 @@
 import { Heading } from '../Heading';
-import { Col, Form, InputGroup, Stack } from 'react-bootstrap';
-import TextField from '../TextField';
+import { Col, Form, Stack } from 'react-bootstrap';
 
 function FiltersSidebar() {
   return (
