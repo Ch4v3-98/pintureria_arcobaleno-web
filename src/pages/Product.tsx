@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Container, Row, Col, Image, Stack, Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { Heading } from '../components/Heading';
-import products from '../data/productos';
+import products from '../data/products';
 import { formatCurrency } from '../utilities/formatCurrency';
 
 function Product() {

@@ -1,5 +1,5 @@
-import pinturas from './pinturas';
-import accesorios from './accesorios';
+import pinturas from './paints';
+import accesorios from './accessories';
 
 const productos = [...pinturas, ...accesorios];
 

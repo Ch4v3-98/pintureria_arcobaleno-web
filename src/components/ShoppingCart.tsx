@@ -2,7 +2,7 @@ import { Button, Offcanvas, Stack } from 'react-bootstrap';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import { formatCurrency } from '../utilities/formatCurrency';
 import { CartItem } from './CartItem';
-import products from '../data/productos';
+import products from '../data/products';
 import { useNavigate } from 'react-router-dom';
 
 type ShoppingCartProps = {

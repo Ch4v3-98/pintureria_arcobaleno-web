@@ -1,7 +1,7 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { HomeCarousel } from '../components/HomeCarousel';
 import { StoreItem } from '../components/store/StoreItem';
-import paintItems from '../data/pinturas';
+import paintItems from '../data/paints';
 
 export function Home() {
   return (

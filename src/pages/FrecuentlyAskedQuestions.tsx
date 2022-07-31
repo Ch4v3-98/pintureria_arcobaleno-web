@@ -1,7 +1,7 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { Heading } from '../components/Heading';
 import Sidebar from '../components/Sidebar';
-import faqData from '../data/faqsData.json';
+import questions from '../data/questions';
 import FAQ from '../components/FAQ';
 
 const FrecuentlyAskedQuestions = () => {
@@ -12,7 +12,7 @@ const FrecuentlyAskedQuestions = () => {
         <Col>
           <Heading className="h3">Preguntas frecuentes</Heading>
           <section>
-            {faqData.map((faq) => (
+            {questions.map((faq) => (
               <FAQ key={faq.id} {...faq} />
             ))}
           </section>

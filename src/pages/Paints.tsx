@@ -1,6 +1,6 @@
 import { Container, Col, Row, Stack } from 'react-bootstrap';
 import FiltersSidebar from '../components/store/FiltersSidebar';
-import paintItems from '../data/pinturas';
+import paintItems from '../data/paints';
 import { StoreItem } from '../components/store/StoreItem';
 import { Heading } from '../components/Heading';
 

@@ -1,4 +1,4 @@
-import productos from './productos';
+import productos from './products';
 import { Brand, Product, ProductType } from './types';
 import { v1 as uuid } from 'uuid';
 

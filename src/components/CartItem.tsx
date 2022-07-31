@@ -1,7 +1,7 @@
 import { Button, Form, Stack } from 'react-bootstrap';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import { formatCurrency } from '../utilities/formatCurrency';
-import products from '../data/productos';
+import products from '../data/products';
 import { Trash } from 'react-bootstrap-icons';
 
 type CartItemProps = {

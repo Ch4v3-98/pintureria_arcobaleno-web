@@ -15,7 +15,7 @@ import { CartItem } from '../components/CartItem';
 import { Heading } from '../components/Heading';
 import Price from '../components/Price';
 import { useShoppingCart } from '../context/ShoppingCartContext';
-import products from '../data/productos';
+import products from '../data/products';
 import { Product } from '../data/types';
 import { formatCurrency } from '../utilities/formatCurrency';
 
