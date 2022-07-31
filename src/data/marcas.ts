@@ -1,45 +1,77 @@
 import productos from './productos';
-import { Marca, Producto } from './types';
+import { Brand, Product, ProductType } from './types';
+import { v1 as uuid } from 'uuid';
 
-const filtrarProductos = (marca: string): Producto[] =>
-  productos.filter((producto) => producto.marca === marca);
+const filtrarProductos = (marca: string): Product[] =>
+  productos.filter((producto) => producto.brand === marca);
 
-const marcas: Marca[] = [
+const data = [
   {
-    id: 1,
-    nombre: 'Alba',
-    imagen: '/imgs/marcas/alba.png',
-    productos: filtrarProductos('Alba'),
-    tiposProductos: ['pintura'],
+    name: 'Alba',
+    image: '/imgs/marcas/alba.png',
+    products: filtrarProductos('Alba'),
+    productTypes: ['pintura'],
   },
   {
-    id: 2,
-    nombre: 'Sinteplast',
-    imagen: '/imgs/marcas/sinteplast.png',
-    productos: filtrarProductos('Sinteplast'),
-    tiposProductos: ['pintura'],
+    name: 'Sinteplast',
+    image: '/imgs/marcas/sinteplast.png',
+    products: filtrarProductos('Sinteplast'),
+    productTypes: ['pintura'],
   },
   {
-    id: 3,
-    nombre: 'Tersuave',
-    imagen: '/imgs/marcas/tersuave.png',
-    productos: filtrarProductos('Tersuave'),
-    tiposProductos: ['pintura'],
+    name: 'Tersuave',
+    image: '/imgs/marcas/tersuave.png',
+    products: filtrarProductos('Tersuave'),
+    productTypes: ['pintura'],
   },
   {
-    id: 5,
-    nombre: 'Plavicon',
-    imagen: '/imgs/marcas/plavicon.png',
-    productos: filtrarProductos('Plavicon'),
-    tiposProductos: ['pintura'],
+    name: 'Plavicon',
+    image: '/imgs/marcas/plavicon.png',
+    products: filtrarProductos('Plavicon'),
+    productTypes: ['pintura'],
   },
   {
-    id: 4,
-    nombre: 'El Galgo',
-    imagen: '/imgs/marcas/elgalgo.png',
-    productos: filtrarProductos('El Galgo'),
-    tiposProductos: ['accesorio'],
+    name: 'El Galgo',
+    image: '/imgs/marcas/elgalgo.png',
+    products: filtrarProductos('El Galgo'),
+    productTypes: ['accesorio'],
+  },
+  {
+    name: 'Cetol',
+    image: '/imgs/marcas/cetol.png',
+    products: filtrarProductos('Cetol'),
+    productTypes: ['accesorio'],
+  },
+  {
+    name: 'Colorin',
+    image: '/imgs/marcas/colorin.png',
+    products: filtrarProductos('Colorin'),
+    productTypes: ['pintura'],
+  },
+  {
+    name: 'Merclin',
+    image: '/imgs/marcas/merclin.png',
+    products: filtrarProductos('Merclin'),
+    productTypes: ['pintura'],
+  },
+  {
+    name: 'Polilak',
+    image: '/imgs/marcas/polilak.png',
+    products: filtrarProductos('Polilak'),
+    productTypes: ['pintura'],
+  },
+  {
+    name: 'Rosarpin',
+    image: '/imgs/marcas/rosarpin.png',
+    products: filtrarProductos('Rosarpin'),
+    productTypes: ['pintura'],
   },
 ];
+
+const marcas: Brand[] = data.map((marca) => ({
+  ...marca,
+  id: uuid(),
+  productTypes: marca.productTypes as ProductType[],
+}));
 
 export default marcas;
