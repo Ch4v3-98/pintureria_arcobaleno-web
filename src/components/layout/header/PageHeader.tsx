@@ -22,7 +22,7 @@ export function PageHeader() {
             id="logo"
             src="/imgs/Arcobaleno-logos_white.png"
             alt="Logo Arcobaleno"
-            style={{ height: '50px' }}
+            style={{ height: '50px', marginLeft: '40px' }}
           />
         </NavbarBrand>
         <SearchBar className="d-none d-lg-flex w-50" />
