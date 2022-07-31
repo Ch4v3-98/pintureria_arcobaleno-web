@@ -1,5 +1,6 @@
 import {
   Container,
+  Image,
   Nav,
   Navbar as BootstrapNavbar,
   OffcanvasBody,
@@ -10,7 +11,7 @@ import * as Icon from 'react-bootstrap-icons';
 import NavbarOffcanvas from 'react-bootstrap/esm/NavbarOffcanvas';
 import { CategoriesDropdown } from './CategoriesDropdown';
 import { NavItem } from './NavItem';
-import { PageHeader } from './PageHeader';
+import { PageHeader } from '../header/PageHeader';
 
 export function Navbar() {
   return (
@@ -29,34 +30,41 @@ export function Navbar() {
           aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
           placement="start"
         >
-          <OffcanvasHeader closeButton>
+          <OffcanvasHeader closeButton className="bg-primary">
             <OffcanvasTitle id={`offcanvasNavbarLabel-expand-lg`}>
-              Offcanvas
+              <Image
+                id="logo"
+                rounded
+                src="/imgs/Arcobaleno-logos_white.png"
+                className="bg-primary"
+                alt="Logo Arcobaleno"
+                style={{ height: '50px' }}
+              />
             </OffcanvasTitle>
           </OffcanvasHeader>
           <OffcanvasBody>
-            <CategoriesDropdown />
             <Nav
               justify
-              className="flex-fill justify-content-md-between align-items-center border border-0"
-              // variant="tabs"
+              className="nav-bar flex-fill justify-content-start align-items-start justify-content-md-end align-items-lg-center border border-0"
             >
-              <NavItem to="/" title="INICIO" icon={<Icon.HouseFill />} />
+              <CategoriesDropdown />
+              <NavItem to="/" title="Inicio" icon={<Icon.HouseFill />} />
               <NavItem
                 to="/pinturas"
-                title="PINTURAS"
+                title="Pinturas"
                 icon={<Icon.Palette2 />}
               />
               <NavItem
                 to="/accesorios"
-                title="ACCESORIOS"
-                icon={<Icon.Boxes />}
+                title="Accesorios"
+                icon={<Icon.BrushFill />}
               />
-              <NavItem to="/marcas" title="MARCAS" icon={<Icon.Archive />} />
+
+              <NavItem to="/marcas" title="Marcas" icon={<Icon.ViewList />} />
               <NavItem
                 to="/contacto"
-                title="CONTACTO"
-                icon={<Icon.Envelope />}
+                title="Contacto"
+                icon={<Icon.EnvelopeFill />}
               />
             </Nav>
           </OffcanvasBody>

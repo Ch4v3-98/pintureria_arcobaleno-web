@@ -1,16 +1,21 @@
-import { Button, Stack } from 'react-bootstrap';
+import { Button, Form, Stack } from 'react-bootstrap';
 import { useShoppingCart } from '../context/ShoppingCartContext';
-import storeItems from '../data/items.json';
 import { formatCurrency } from '../utilities/formatCurrency';
+import products from '../data/productos';
+import { Trash } from 'react-bootstrap-icons';
 
 type CartItemProps = {
-  id: number;
+  id: string;
   quantity: number;
 };
 
 export function CartItem({ id, quantity }: CartItemProps) {
-  const { removeItem } = useShoppingCart();
-  const item = storeItems.find((item) => item.id === id);
+  const { removeItem, increaseItemQuantity, decreaseItemQuantity } =
+    useShoppingCart();
+
+  const item = products.find((item) => {
+    return item.id === id;
+  });
 
   if (!item) {
     return null;
@@ -23,30 +28,40 @@ export function CartItem({ id, quantity }: CartItemProps) {
       className="d-flex align-items-center rounded bg-light p-3"
     >
       <img
-        src={item.imgUrl}
+        src={item.images[0]}
         alt={item.name}
-        style={{ width: '125px', height: '75px', objectFit: 'cover' }}
+        style={{ width: '125px', height: '75px', objectFit: 'contain' }}
       />
       <div className="me-auto">
-        <div>
-          {item.name}{' '}
-          {quantity > 1 && (
-            <span className="text-muted" style={{ fontSize: '.65rem' }}>
-              x{quantity}
-            </span>
-          )}
-        </div>
-        <div className="text-muted" style={{ fontSize: '.75rem' }}>
-          {formatCurrency(item.price)}
-        </div>
+        <div style={{ fontSize: '0.85rem' }}>{item.name}</div>
       </div>
-      <div> {formatCurrency(item.price * quantity)}</div>
+      <div>
+        <Form.Group>
+          <Form.Label>Cant.</Form.Label>
+          <Form.Control
+            type="number"
+            value={quantity}
+            min={1}
+            max={item.amount}
+            onChange={(e) => {
+              const newQuantity = parseInt(e.target.value);
+              if (newQuantity > quantity) {
+                increaseItemQuantity(id);
+              } else {
+                decreaseItemQuantity(id);
+              }
+            }}
+            className="mb-3"
+          />
+        </Form.Group>
+        {formatCurrency(item.price * quantity)}
+      </div>
       <Button
-        variant="outline-danger"
-        size="sm"
+        variant="outline-primary"
+        className="shadow-0 border-0 bg-transparent"
         onClick={() => removeItem(item.id)}
       >
-        &times;
+        <Trash size={20} />
       </Button>
     </Stack>
   );

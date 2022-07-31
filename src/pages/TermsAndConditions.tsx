@@ -2,7 +2,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Heading } from '../components/Heading';
 import Sidebar from '../components/Sidebar';
 
-const TerminosCondiciones = () => {
+const TermsAndConditions = () => {
   return (
     <Container className="my-5">
       <Row>
@@ -668,4 +668,4 @@ const TerminosCondiciones = () => {
   );
 };
 
-export default TerminosCondiciones;
+export default TermsAndConditions;

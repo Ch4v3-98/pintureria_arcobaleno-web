@@ -1,27 +1,43 @@
-import { Offcanvas, Stack } from 'react-bootstrap';
+import { Button, Offcanvas, Stack } from 'react-bootstrap';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import { formatCurrency } from '../utilities/formatCurrency';
 import { CartItem } from './CartItem';
-import storeItems from '../data/items.json';
+import products from '../data/productos';
+import { useNavigate } from 'react-router-dom';
 
 type ShoppingCartProps = {
   isOpen: boolean;
 };
 
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
-  const { closeCart, cartItems, cartItemsQuantity } = useShoppingCart();
+  const { closeCart, clearCart, cartItems, cartItemsQuantity } =
+    useShoppingCart();
+  const navigate = useNavigate();
 
-  // const quantity
+  const handlePurchase = () => {
+    navigate('/checkout');
+    closeCart();
+    clearCart();
+  };
 
   return (
     <Offcanvas show={isOpen} onHide={closeCart} placement="end">
-      <Offcanvas.Header>
-        <Offcanvas.Title>Carrito de compras</Offcanvas.Title>
+      <Offcanvas.Header closeButton className="bg-primary">
+        <Offcanvas.Title className="text-light">
+          Carrito de compras
+        </Offcanvas.Title>
       </Offcanvas.Header>
       <hr className="mt-0 mb-1" />
       <Offcanvas.Body>
         {cartItemsQuantity > 0 ? (
           <Stack>
+            <Button
+              onClick={handlePurchase}
+              className="ls-wide text-light mb-1"
+              variant="secondary"
+            >
+              Finalizar compra
+            </Button>
             {cartItems.map((item) => (
               <CartItem key={item.id} {...item} />
             ))}
@@ -29,9 +45,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
               Total{' '}
               {formatCurrency(
                 cartItems.reduce((total, cartItem) => {
-                  const item = storeItems.find(
-                    (item) => item.id === cartItem.id,
-                  );
+                  const item = products.find((item) => item.id === cartItem.id);
                   return total + (item ? item.price * cartItem.quantity : 0);
                 }, 0),
               )}

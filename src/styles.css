@@ -3,6 +3,33 @@
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
+#root {
+    background-color:rgb(240, 240, 240);
+}
+
+/* MediaQuery .navItem */
+@media (min-width: 992px) {
+    .nav-bar {
+      margin-left: 100px;
+    }
+  }
+
+/* MediaQuery .navItem */
+@media (max-width: 992px) {
+  .nav-item {
+    color: darkorange !important;
+    padding: 15px 10px;
+  }
+}
+
+.search-bar {
+    padding: 20px 15px !important;
+}
+
+.nav-item:hover {
+    color: #EFE608 !important;
+}
+
 .custom-link {
     color: rgb(240, 240, 240);
     text-decoration: none;
@@ -13,12 +40,30 @@
     text-decoration: none;
 }
 
+.store-item:hover {
+    border: 1px solid orange;
+}
+
+.product-mini-img:hover {
+    border: 1px solid orange !important;
+}
+
 .social-media-button {
-    background-color: rgba(255, 255, 255, 45%);
+    background-color: rgba(255, 255, 255, 25%);
     border-radius: 50%;
     color: rgb(240, 240, 240);
     display: flex;
     padding: 6px;
     justify-content: center;
     align-items: center;
+}
+
+.social-media-button.facebook:hover {
+    background-color: rgb(66, 103, 178);
+    color: rgb(240, 240, 240);
+}
+
+.social-media-button.instagram:hover {
+    background-color: rgb(255, 64, 129);
+    color: rgb(240, 240, 240);
 }

@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap';
 import { Cart, CartFill } from 'react-bootstrap-icons';
-import { useShoppingCart } from '../context/ShoppingCartContext';
+import { useShoppingCart } from '../../../context/ShoppingCartContext';
 
 export function ShoppingCartButton() {
   const { openCart, cartItemsQuantity } = useShoppingCart();

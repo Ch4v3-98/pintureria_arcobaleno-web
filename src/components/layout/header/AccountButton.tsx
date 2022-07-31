@@ -8,10 +8,13 @@ import {
 } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../../context/AuthContext';
 
 export function AccountButton() {
   const [show, setShow] = useState(false);
   const target = useRef(null);
+
+  const { user, logout } = useAuth();
 
   return (
     <>
@@ -33,23 +36,28 @@ export function AccountButton() {
       >
         <Popover>
           <PopoverBody className="p-1">
-            <ListGroup>
-              <ListGroup.Item
-                action
-                as={Link}
-                to="/contacto"
-                onClick={() => setShow(false)}
-              >
-                Mi Cuenta
-              </ListGroup.Item>
-              <ListGroup.Item
-                action
-                as={Link}
-                to="/contacto"
-                onClick={() => setShow(false)}
-              >
-                Cerrar Sesion
-              </ListGroup.Item>
+            <ListGroup variant="flush">
+              {!user && (
+                <ListGroup.Item
+                  action
+                  as={Link}
+                  to="/login"
+                  onClick={() => setShow(false)}
+                >
+                  Ingresar
+                </ListGroup.Item>
+              )}
+              {user && (
+                <ListGroup.Item
+                  action
+                  onClick={() => {
+                    logout();
+                    setShow(false);
+                  }}
+                >
+                  Cerrar sesión
+                </ListGroup.Item>
+              )}
             </ListGroup>
           </PopoverBody>
         </Popover>

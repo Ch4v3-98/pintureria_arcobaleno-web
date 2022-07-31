@@ -1,5 +1,4 @@
 import { ReactElement } from 'react';
-import { Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 type NavItemProps = {
@@ -10,16 +9,16 @@ type NavItemProps = {
 
 export function NavItem({ to, title, icon }: NavItemProps) {
   return (
-    <Nav.Link
+    <NavLink
       to={to}
-      as={NavLink}
-      className="d-flex align-items-center align-content-center justify-content-center"
+      className="nav-item text-decoration-none d-flex align-items-center justify-content-center"
+      style={({ isActive }) =>
+        isActive ? { color: '#EFE608' } : { color: 'white' }
+      }
     >
       {icon}
       &nbsp;&nbsp;
-      <span className="" style={{ fontSize: '0.85rem' }}>
-        {title}
-      </span>
-    </Nav.Link>
+      <span style={{ fontSize: '0.95rem' }}>{title}</span>
+    </NavLink>
   );
 }

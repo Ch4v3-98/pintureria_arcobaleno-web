@@ -7,35 +7,40 @@ import {
   Telephone,
   Whatsapp,
 } from 'react-bootstrap-icons';
-import { Heading } from './Heading';
+import { Link } from 'react-router-dom';
+import { Heading } from '../../Heading';
 import { NavLink } from './NavLink';
 import SocialMediaButton from './SocialMediaButton';
 
 export function Footer() {
   return (
-    <Container fluid className="bg-primary p-5">
-      <Container className="">
+    <Container fluid className="bg-primary py-5 p-sm-5">
+      <Container>
         <Row>
           <Col xs={12} sm={6} lg={4}>
-            <Image
-              id="logo"
-              src="/imgs/Arcobaleno-logos_white.png"
-              alt="Logo Arcobaleno"
-              className="mb-2"
-              style={{ height: '50px', position: 'relative', top: '-15px' }}
-            />
+            <Link to="/">
+              <Image
+                id="logo"
+                src="/imgs/Arcobaleno-logos_white.png"
+                alt="Logo Arcobaleno"
+                className="mb-2"
+                style={{ height: '50px', position: 'relative', top: '-15px' }}
+              />
+            </Link>
             <Nav className="ms-3 flex-column  align-content-start">
               <NavLink to="/contacto" title="Contacto" />
+              <NavLink to="/sobre-nosotros" title="Sobre nosotros" />
               <NavLink to="/faq" title="Preguntas Frecuentes" />
               <NavLink
                 to="/terminos-y-condiciones"
                 title="Términos y Condiciones"
               />
+              <NavLink to="/devoluciones" title="Política de Devoluciones" />
             </Nav>
           </Col>
-          <Col xs={12} sm={6} lg={4}>
+          <Col xs={12} sm={6} lg={4} className="my-3 mt-5 my-lg-0 mt-sm-0">
             <Row>
-              <Col className="">
+              <Col>
                 <Heading className="h6 fw-bold text-light text-uppercase">
                   Atención al cliente
                 </Heading>
@@ -90,7 +95,7 @@ export function Footer() {
               </Col>
             </Row>
           </Col>
-          <Col lg={4}>
+          <Col lg={4} className="my-3 my-lg-0">
             <Heading className="h6 fw-bold text-light text-uppercase">
               Seguínos en nuestras redes
             </Heading>
@@ -101,19 +106,20 @@ export function Footer() {
             >
               <SocialMediaButton
                 title="Facebook"
-                href="#"
+                href="https://www.facebook.com/pintureriaarcobaleno/"
                 icon={<Facebook size={25} />}
               />
               <SocialMediaButton
                 title="Instagram"
-                href="#"
+                href="https://www.instagram.com/arcobalenopintureria/"
                 icon={<Instagram size={25} />}
               />
             </Stack>
-            <p className="text-white mt-3">
-              © 2022 Arcobaleno. Todos los derechos reservados.
-            </p>
           </Col>
+          <hr className="my-1" />
+          <span className="text-white mt-3 fw-bold">
+            © 2022 Arcobaleno. Todos los derechos reservados.
+          </span>
         </Row>
       </Container>
     </Container>
