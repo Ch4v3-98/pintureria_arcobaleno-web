@@ -17,6 +17,7 @@ import Cart from './pages/Cart';
 import Product from './pages/Product';
 import Login from './pages/Login';
 import { AuthProvider } from './context/AuthContext';
+import Checkout from './pages/Checkout';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/pinturas" element={<Paints />} />
             <Route path="/accesorios" element={<Accessories />} />
             <Route path="/marcas" element={<Brands />} />
