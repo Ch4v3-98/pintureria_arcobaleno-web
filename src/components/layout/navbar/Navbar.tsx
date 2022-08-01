@@ -62,9 +62,10 @@ export function Navbar() {
 
               <NavItem to="/marcas" title="Marcas" icon={<Icon.ViewList />} />
               <NavItem
-                to="/contacto"
-                title="Contacto"
-                icon={<Icon.EnvelopeFill />}
+                to="/soporte/contacto"
+                path="/soporte/"
+                title="Soporte"
+                icon={<Icon.InfoCircle />}
               />
             </Nav>
           </OffcanvasBody>

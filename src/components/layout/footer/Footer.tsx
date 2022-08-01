@@ -29,14 +29,14 @@ export function Footer() {
               />
             </Link>
             <Nav className="ms-3 flex-column  align-content-start">
-              <NavLink to="/contacto" title="Contacto" />
-              <NavLink to="/sobre-nosotros" title="Sobre nosotros" />
-              <NavLink to="/faq" title="Preguntas Frecuentes" />
+              <NavLink to="/soporte/contacto" title="Contacto" />
+              <NavLink to="/soporte/sobre-nosotros" title="Sobre nosotros" />
+              <NavLink to="/soporte/faq" title="Preguntas Frecuentes" />
               <NavLink
-                to="/terminos-y-condiciones"
+                to="/soporte/terminos-y-condiciones"
                 title="Términos y Condiciones"
               />
-              <NavLink to="/devoluciones" title="Política de Devoluciones" />
+              <NavLink to="/soporte/devoluciones" title="Política de Devoluciones" />
             </Nav>
           </Col>
           <Col xs={12} sm={6} lg={4} className="my-3 mt-5 my-lg-0 mt-sm-0">
