@@ -4,21 +4,27 @@ import { formatCurrency } from '../utilities/formatCurrency';
 import { CartItem } from './CartItem';
 import products from '../data/products';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 type ShoppingCartProps = {
   isOpen: boolean;
 };
 
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
+  const { user } = useAuth();
   const { closeCart, clearCart, cartItems, cartItemsQuantity } =
     useShoppingCart();
 
   const navigate = useNavigate();
 
   const handlePurchase = () => {
-    navigate('/checkout');
     closeCart();
-    clearCart();
+    if (user) {
+      navigate('/checkout');
+      clearCart();
+    } else {
+      navigate('/login');
+    }
   };
 
   return (
