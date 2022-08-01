@@ -6,7 +6,7 @@ import FAQ from '../components/FAQ';
 
 const FrecuentlyAskedQuestions = () => {
   return (
-    <Container className="my-5">
+    <Container className="my-3 my-lg-5">
       <Row>
         <Sidebar />
         <Col>
