@@ -1,5 +1,5 @@
 import { Paint, PaintType } from './types';
-import { v1 as uuid } from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 const data = [
   {
@@ -118,6 +118,19 @@ const data = [
     capacity: 20,
     type: 'interior',
     amount: 15,
+  },
+  {
+    name: 'Látex Interior Mate Profesional Sinteplast 4 Litros',
+    price: 3645,
+    discount: 0,
+    description:
+      'Producto apropiado para superficies de revoque, hormigón, ladrillos, bloques, paneles pre-construidos, etc. Especial para uso profesional por su poder cubriente y rendimiento.',
+    images: ['/imgs/productos/pinturas/Sinteplast-Mate.jpg'],
+    brand: 'Sinteplast',
+    color: 'Mate',
+    capacity: 4,
+    type: 'interior',
+    amount: 5,
   },
 ];
 
