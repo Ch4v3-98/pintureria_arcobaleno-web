@@ -3,7 +3,7 @@ import { Col, Form, Stack } from 'react-bootstrap';
 
 function FiltersSidebar() {
   return (
-    <Col md={3} style={{ marginTop: '5px' }}>
+    <Col md={3} style={{ marginTop: '5px' }} className="mb-4">
       <Heading className="h4">Filtrar por</Heading>
 
       <section>

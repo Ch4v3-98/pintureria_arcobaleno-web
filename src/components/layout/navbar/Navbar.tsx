@@ -59,7 +59,6 @@ export function Navbar() {
                 title="Accesorios"
                 icon={<Icon.BrushFill />}
               />
-
               <NavItem to="/marcas" title="Marcas" icon={<Icon.ViewList />} />
               <NavItem
                 to="/soporte/contacto"
