@@ -34,15 +34,17 @@ function App() {
             <Route path="/accesorios" element={<Accessories />} />
             <Route path="/marcas" element={<Brands />} />
             <Route path="/carrito" element={<Cart />} />
-            <Route path="/sobre-nosotros" element={<About />} />
-            <Route path="/contacto" element={<Contact />} />
-            <Route path="/faq" element={<FrecuentlyAskedQuestions />} />
+            <Route path="/soporte">
+              <Route path="contacto" element={<Contact />} />
+              <Route path="faq" element={<FrecuentlyAskedQuestions />} />
+              <Route path="sobre-nosotros" element={<About />} />
+              <Route
+                path="terminos-y-condiciones"
+                element={<TermsAndConditions />}
+              />
+              <Route path="devoluciones" element={<RefundPolicies />} />
+            </Route>
             <Route path="/catalogo/:productId" element={<Product />} />
-            <Route
-              path="/terminos-y-condiciones"
-              element={<TermsAndConditions />}
-            />
-            <Route path="/devoluciones" element={<RefundPolicies />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Container>
