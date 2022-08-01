@@ -5,16 +5,7 @@ import { Heading } from './Heading';
 
 function Sidebar() {
   return (
-    <Col
-      md={3}
-      className="h-100"
-      style={{
-        position: 'sticky',
-        top: 184,
-        zIndex: 1,
-        marginTop: '10px',
-      }}
-    >
+    <Col md={3} className="support-sidebar h-100 mb-3">
       <Heading className="h5">Arcobaleno</Heading>
       <Nav variant="pills" className="flex-column bg-light p-1">
         <Nav.Item>

@@ -47,6 +47,16 @@
     border: 1px solid orange !important;
 }
 
+@media (min-width: 992px) {
+    .support-sidebar {
+        position: sticky;
+        top: 196px;
+        z-index: 1;
+        margin-top: 10px;
+    }
+  }
+
+
 .social-media-button {
     background-color: rgba(255, 255, 255, 25%);
     border-radius: 50%;
