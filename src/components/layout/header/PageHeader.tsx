@@ -7,13 +7,18 @@ import SearchBar from './SearchBar';
 import { SearchButton } from './SearchButton';
 import { ShoppingCartButton } from '../navbar/ShoppingCartButton';
 
-export function PageHeader() {
+export function PageHeader({ handleShow }: { handleShow: () => void }) {
   const { user } = useAuth();
+
+  const handleOnPress = () => {
+    handleShow();
+  };
 
   return (
     <Container fluid className="bg-primary">
       <Container className="p-3 d-flex align-items-center justify-content-between">
         <NavbarToggle
+          onClick={handleOnPress}
           aria-controls={`offcanvasNavbar-expand-lg`}
           className="bg-secondary border border-2 border-terciary"
         />
