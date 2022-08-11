@@ -1,4 +1,4 @@
-# This was a project made for my career
+# Arcobaleno Paint Shop
 
 It was made with [Create React App](https://create-react-app.dev) and uses [Bootstrap](https://getbootstrap.com) and [React Bootstrap](https://react-bootstrap.netlify.app).
 
@@ -12,7 +12,7 @@ To start, run the following commands in the project directory:
 
 Installs all the depedencies.
 
-#### `npm start`
+### `npm start`
 
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
